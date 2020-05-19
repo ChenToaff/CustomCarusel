@@ -16,6 +16,7 @@ function CustomCarousel() {
 
   //this function define the size of the items
   function resizeCarousel() {
+    $(this).hide();
     var id = 0;
     var sampwidth = $(itemsMainDiv).width();
     var bodyWidth = $("body").width();
@@ -51,7 +52,9 @@ function CustomCarousel() {
         });
       $(this).show();
       $(".leftLst").addClass("over");
-      $(".rightLst").removeClass("over");
+      if (itemWidth * itemNumbers > bodyWidth)
+        $(".rightLst").removeClass("over");
+      else $(".rightLst").addClass("over");
     });
   }
 
