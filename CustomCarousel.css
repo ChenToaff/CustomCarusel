@@ -1,0 +1,53 @@
+.CustomCarousel {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: auto;
+  background-color: black;
+}
+.CustomCarousel .CustomCarousel-inner {
+  transition: 1s ease all;
+  float: left;
+  overflow: hidden;
+  background-color: black;
+  padding-bottom: 5px;
+}
+.CustomCarousel-header {
+  color: blanchedalmond;
+  margin: 0;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  background-color: black;
+}
+.CustomCarousel .CustomCarousel-inner .item {
+  float: left;
+}
+.CustomCarousel .CustomCarousel-inner .Poster {
+  max-width: 100%;
+  max-height: 320px;
+}
+.CustomCarousel .leftLst,
+.CustomCarousel .rightLst {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  font-weight: 300;
+  font-size: x-large;
+  border: none;
+}
+.CustomCarousel .leftLst {
+  left: 0;
+}
+.CustomCarousel .rightLst {
+  right: 0;
+}
+
+.CustomCarousel .leftLst.over,
+.CustomCarousel .rightLst.over {
+  pointer-events: none;
+  visibility: hidden;
+}
