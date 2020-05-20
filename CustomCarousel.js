@@ -1,29 +1,25 @@
 function CustomCarousel() {
-  var itemsMainDiv = ".CustomCarousel";
-  var itemsDiv = ".CustomCarousel-inner";
-  var itemWidth = "";
-  var incno = 0;
+  let itemWidth = "";
+  let incno = 0;
+  resizeCarousel();
 
   $(".leftLst, .rightLst").click(function () {
     moveCarousel(this);
   });
-
-  resizeCarousel();
-
   $(window).resize(function () {
     resizeCarousel();
   });
 
-  //this function define the size of the items
+  //Resizes the carusel and sets items width.
   function resizeCarousel() {
-    $(this).hide();
-    var id = 0;
-    var sampwidth = $(itemsMainDiv).width();
-    var bodyWidth = $("body").width();
-    $(itemsDiv).each(function () {
+    let id = 0;
+    const sampwidth = $(".CustomCarousel").width();
+    const bodyWidth = $("body").width();
+    $(".CustomCarousel-inner").each(function () {
+      $(this).hide();
       id++;
-      var itemNumbers = $(this).find(".item").length;
-      var itemsSplit = $(this).parent().attr("data-items").split(",");
+      const itemNumbers = $(this).find(".item").length;
+      const itemsSplit = $(this).parent().attr("data-items").split(",");
       $(this)
         .parent()
         .attr("id", "CustomCarousel" + id);
@@ -45,12 +41,13 @@ function CustomCarousel() {
         transform: "translateX(0px)",
         width: itemWidth * itemNumbers,
       });
+      $(this).show();
       $(this)
         .find(".item")
         .each(function () {
           $(this).outerWidth(itemWidth);
         });
-      $(this).show();
+
       $(".leftLst").addClass("over");
       if (itemWidth * itemNumbers > bodyWidth)
         $(".rightLst").removeClass("over");
@@ -58,36 +55,52 @@ function CustomCarousel() {
     });
   }
 
-  //this function used to move the items
+  //Moves the items on button press.
   function moveCarousel(btn) {
-    var el = "#" + $(btn).parent().attr("id");
-    var leftBtn = ".leftLst";
-    var rightBtn = ".rightLst";
-    var translateXval = "";
-    var divStyle = $(el + " " + itemsDiv).css("transform");
-    var values = divStyle.match(/-?[\d\.]+/g);
-    var xds = Math.abs(values[4]);
-    if ($(btn).hasClass("leftLst")) {
-      translateXval = parseInt(xds) - parseInt(itemWidth * incno);
-      $(el + " " + rightBtn).removeClass("over");
+    const parent = "#" + $(btn).parent().attr("id");
+    const leftBtn = ".leftLst";
+    const rightBtn = ".rightLst";
+    let newX;
+    const inner = $(parent + " .CustomCarousel-inner");
+    const divStyle = inner.css("transform");
+    const oldX = Math.abs(divStyle.match(/-?[\d\.]+/g)[4]);
 
-      if (translateXval <= itemWidth / 2) {
-        translateXval = 0;
-        $(el + " " + leftBtn).addClass("over");
+    if ($(btn).hasClass("leftLst")) {
+      newX = parseInt(oldX) - parseInt(itemWidth * incno);
+      $(parent + " " + rightBtn).removeClass("over");
+
+      if (newX <= itemWidth / 2) {
+        $(parent + " " + leftBtn).addClass("over");
+        if (newX < 0) {
+          newX = 0;
+        }
       }
     } else {
-      var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
-      translateXval = parseInt(xds) + parseInt(itemWidth * incno);
-      $(el + " " + leftBtn).removeClass("over");
+      const itemsCondition = inner.width() - $(parent).width();
+      newX = parseInt(oldX) + parseInt(itemWidth * incno);
+      $(parent + " " + leftBtn).removeClass("over");
 
-      if (translateXval >= itemsCondition - itemWidth / 2) {
-        translateXval = itemsCondition;
-        $(el + " " + rightBtn).addClass("over");
+      if (itemsCondition == oldX) {
+        //inner.addClass("Repeat");
+        inner.animate({
+          step: function () {
+            $(this).css(" transform", "translateX(-100%)");
+          },
+        });
+        //abc
+        //inner.css("animation", "Repeat 0.5s ease");
+
+        //setTimeout(function () {
+        //  inner.css("transition", "transform 1s ease");
+        //  inner.css("transform", "translateX(0px)");
+        //}, 5);
+        $(parent + " " + leftBtn).addClass("over");
+        return;
+      }
+      if (newX > itemsCondition - itemWidth / 2) {
+        newX = itemsCondition;
       }
     }
-    $(el + " " + itemsDiv).css(
-      "transform",
-      "translateX(" + -translateXval + "px)"
-    );
+    inner.css("transform", "translateX(" + -newX + "px)");
   }
 }
