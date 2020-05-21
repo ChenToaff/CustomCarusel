@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="CustomCarusel.css" />
+    <script src="CustomCarusel.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        CustomCarousel();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <h1 class="CustomCarousel-header">
+        Trending Now
+      </h1>
+      <div class="row">
+        <div class="CustomCarousel" data-items="2,4,5,6,8" data-interval="1000">
+          <div class="CustomCarousel-inner">
+            <div class="item">
+              <div
+                style="
+                  width: 150px;
+                  height: 200px;
+                  background-color: aquamarine;
+                "
+              ></div>
+            </div>
+            <div class="item">
+              <div
+                style="width: 150px; height: 200px; background-color: red;"
+              ></div>
+            </div>
+            <div class="item">
+              <div
+                style="width: 150px; height: 200px; background-color: green;"
+              ></div>
+            </div>
+            <div class="item">
+              <div
+                style="width: 150px; height: 200px; background-color: blue;"
+              ></div>
+            </div>
+            <div class="item">
+              <div
+                style="width: 150px; height: 200px; background-color: yellow;"
+              ></div>
+            </div>
+          </div>
+          <button class="leftLst"><</button>
+          <button class="rightLst">></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
