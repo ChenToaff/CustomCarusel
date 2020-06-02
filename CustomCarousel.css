@@ -1,4 +1,5 @@
 .CustomCarousel {
+  display: flex;
   float: left;
   overflow: hidden;
   width: 100%;
@@ -6,10 +7,16 @@
   background-color: #414d53;
   height: auto;
 }
+.spaced {
+  display: block;
+}
 .CustomCarousel .CustomCarousel-inner {
   float: left;
   overflow: hidden;
   padding-bottom: 5px;
+  min-height: 150px;
+  min-width: 80%;
+  margin: auto;
 }
 .CustomCarousel-header {
   margin: 0;
