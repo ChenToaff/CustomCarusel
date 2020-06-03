@@ -13,7 +13,7 @@ function manageCarousel() {
 }
 
 //Resizes the items to fit custom division.
-function spaced(carousel, parentWidth, items, pad) {
+function columns(carousel, parentWidth, items, pad) {
   const itemsSplit = $(carousel).attr("data-items").split(",");
   let visibleItems = itemsSplit[0];
   if (parentWidth >= 1200) visibleItems = itemsSplit[4];
@@ -39,8 +39,8 @@ function resizeCarousel(carousel) {
   $(items).hide();
   let widthCount = 0;
   let visibleItems = 0;
-  if ($(carousel).hasClass("spaced")) {
-    spaced(carousel, parentWidth, items, pad);
+  if ($(carousel).hasClass("Columns")) {
+    columns(carousel, parentWidth, items, pad);
   }
   let last;
   let i = 0;
