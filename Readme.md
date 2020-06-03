@@ -36,7 +36,7 @@ Adds padding between the items.
 adding "Columns" - gives you the ability to decide how many items will show per screen ratio.
 
 ```HTML
-<div class="CustomCarousel"  data-items="2,4,5,6,8">
+<div class="CustomCarousel Columns"  data-items="2,4,5,6,8">
 ...
 </div>
 ```
