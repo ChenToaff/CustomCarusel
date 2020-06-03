@@ -2,7 +2,7 @@
 
 ## A carousel with multiple elements at once.
 
-<img src="CustomCarousel.png" />
+<img src="readme files/CustomCarousel.png" />
 
 # Usage:
 
@@ -46,13 +46,13 @@ adding "Columns" - gives you the ability to decide how many items will show per 
 </h3>
 
 \*The screen ratios are identicale to the bootsrtap ones:
-<img src="sizes.png" />
+<img src="readme files/sizes.png" />
 
 </p>
 
 # Extras:
 
-<img src="CustomCarousel.gif" />
+<img src="readme files/CustomCarousel.gif" />
 The extras.css is used to create an hover affect.
 <br>
 it should be used with "CustomCarousel-footer":
@@ -62,7 +62,7 @@ it should be used with "CustomCarousel-footer":
 ```
 
 ```HTML
-<h1 class="CustomCarousel-header">
+<h1 class="readme files/CustomCarousel-header">
      ...
 </h1>
 <div class="CustomCarousel">
