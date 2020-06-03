@@ -17,7 +17,14 @@
      Header
 </h1>
 <div class="CustomCarousel" data-padding="3">
-     <div class="CustomCarousel-inner"></div>
+     <div class="CustomCarousel-inner">
+          <div class="item">
+               ...
+          </div>
+          <div class="item">
+               ...
+          </div>
+     </div>
      <button class="btn-prev"><</button>
      <button class="btn-next">></button>
 </div>
@@ -37,7 +44,7 @@ adding "Columns" - gives you the ability to decide how many items will show per 
 
 ```HTML
 <div class="CustomCarousel Columns"  data-items="2,4,5,6,8">
-...
+     ...
 </div>
 ```
 
