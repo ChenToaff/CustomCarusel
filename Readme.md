@@ -40,8 +40,7 @@ adding "Columns" - gives you the ability to decide how many items will show per 
 </h3>
 
 \*The screen ratios are identicale to the bootsrtap ones:
-<img src="sizes.png
-"/>
+<img src="sizes.png" />
 
 </p>
 
