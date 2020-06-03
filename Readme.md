@@ -6,14 +6,20 @@
 
 # Usage:
 
+```HTML
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link rel="stylesheet" type="text/css" href="CustomCarousel.css" />
+<script src="CustomCarousel.js"></script>
 ```
+
+```HTML
 <h1 class="CustomCarousel-header">
-      Header
-    </h1>
-    <div class="CustomCarousel" data-padding="3">
-      <div class="CustomCarousel-inner"></div>
-      <button class="btn-prev"><</button>
-      <button class="btn-next">></button>
+     Header
+</h1>
+<div class="CustomCarousel" data-padding="3">
+     <div class="CustomCarousel-inner"></div>
+     <button class="btn-prev"><</button>
+     <button class="btn-next">></button>
 </div>
 ```
 
@@ -29,7 +35,7 @@ Adds padding between the items.
 
 adding "Columns" - gives you the ability to decide how many items will show per screen ratio.
 
-```
+```HTML
 <div class="CustomCarousel"  data-items="2,4,5,6,8">
 ...
 </div>
@@ -51,7 +57,11 @@ The extras.css is used to create an hover affect.
 <br>
 it should be used with "CustomCarousel-footer":
 
+```HTML
+<link rel="stylesheet" type="text/css" href="extra.css" />
 ```
+
+```HTML
 <h1 class="CustomCarousel-header">
      ...
 </h1>
