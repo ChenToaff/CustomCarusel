@@ -60,7 +60,7 @@ adding "Columns" - gives you the ability to decide how many items will show per 
 # Extras:
 
 <img src="readme files/CustomCarousel.gif" />
-The extras.css is used to create an hover affect.
+The extra.css is used to create an hover affect.
 <br>
 it should be used with "CustomCarousel-footer":
 
