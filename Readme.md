@@ -52,7 +52,7 @@ adding "Columns" - gives you the ability to decide how many items will show per 
 <h3><b>just add:</b> data-items= 'X, X, X, X, X'. (replace with numbers)
 </h3>
 
-\*The screen ratios are identicale to the bootsrtap ones:
+\*The screen ratios are identical to the bootsrtap ones:
 <img src="readme files/sizes.png" />
 
 </p>
