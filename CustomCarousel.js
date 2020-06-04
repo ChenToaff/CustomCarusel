@@ -1,3 +1,4 @@
+window.addEventListener("load", CustomCarousel);
 function CustomCarousel() {
   manageCarousel();
 
